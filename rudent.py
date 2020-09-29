@@ -10,4 +10,4 @@ def rudent(sen):
     return classes[int(np.round(model.predict(tsens)))]
 
 sentence = input('> Say Something: ')
-rudent(sentence)
+print(rudent(sentence))
