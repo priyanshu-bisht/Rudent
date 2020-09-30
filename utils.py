@@ -3,7 +3,7 @@ class tokenizer:
     def __init__(self, corpus):
         cc = []
         for x in corpus:
-            ans = ' '.join(re.sub('([^A-Za-z ])|(@[A-Za-z0-9]+)|(\w+:\/\/\S+)','',x).split())
+            ans = ' '.join(re.sub('(\w+:\/\/\S+)|([www][.][A-z0-9]+[.])|(@[A-Za-z0-9]+)|([^A-Za-z ])','',x).split())
             cc.append(ans.lower())
         self.corp = cc
         cc = None
@@ -72,6 +72,6 @@ class tokenizer:
     def sanatize(self, sen):
         sansen = []
         for x in sen:
-            ans = ' '.join(re.sub('([^A-Za-z ])|(@[A-Za-z0-9]+)|(\w+:\/\/\S+)','',x).split())
+            ans = ' '.join(re.sub('(\w+:\/\/\S+)|([www][.][A-Za-z0-9]+[.])|(@[A-Za-z0-9]+)|([^A-Za-z ])','',x).split())
             sansen.append(ans.lower())
         return sansen
